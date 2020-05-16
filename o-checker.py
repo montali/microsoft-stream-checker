@@ -50,7 +50,6 @@ class VideoChecker:
         options.headless = True
         self.driver = webdriver.Firefox(options=options)
         self.driver.get(self.args.url)
-        assert "Accesso" in self.driver.title
         email_input = None
         while email_input == None:
             email_input = self.driver.find_element_by_xpath(
