@@ -52,8 +52,8 @@ class VideoChecker:
         self.driver.get(self.args.url)
         email_input = None
         while email_input == None:
-            email_input = self.driver.find_element_by_xpath(
-                "//*[contains(@placeholder, 'posta')]")
+            email_input = self.driver.find_element_by_id(
+                "i0116")
         email_input.click()
         email_input.send_keys(EMAIL)
         email_input.send_keys(Keys.RETURN)
