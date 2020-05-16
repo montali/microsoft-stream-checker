@@ -80,7 +80,7 @@ and the bot will check the videos.
 Set it up as a cronjob and you will be notified as soon as a video gets uploaded. Use
 
 ```
-0 * * * * cd /home/simone/microsoft-stream-checker & python3 o-checker.py -u [professorlink] -c chatid >/dev/null 2>&1
+0 * * * * cd /home/simone/microsoft-stream-checker && python3 o-checker.py -u [professorlink] -c chatid >/dev/null 2>&1
 ```
 
 to check every hour.
