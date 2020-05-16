@@ -4,6 +4,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.firefox.options import Options
 import os
 import argparse
 from telegram import ParseMode
@@ -44,7 +45,10 @@ class VideoChecker:
 
     def check_vids(self):
         # Create the webdriver
-        self.driver = webdriver.Firefox()
+        options = Options()
+
+        options.headless = True
+        self.driver = webdriver.Firefox(options=options)
         self.driver.get(self.args.url)
         assert "Accesso" in self.driver.title
         email_input = None
