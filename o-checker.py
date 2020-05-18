@@ -92,9 +92,9 @@ class VideoChecker:
                     new_vids.append((video.get_attribute(
                         'href'), video.get_attribute('aria-label')))
                     old_vids.append(video.get_attribute('href'))
-        with open(file_name, 'w') as vids_file:
-            json.dump(old_vids, vids_file)
         if len(new_vids) > 0:
+            with open(file_name, 'w') as vids_file:
+                json.dump(old_vids, vids_file)
             self.notify_new_vids(new_vids)
 
     def notify_new_vids(self, new_vids):
